@@ -1,4 +1,4 @@
-# Microservicio en Spring Boot con Java 17
+# Microservicio para el manejo de usuario
 
 Este proyecto es un microservicio desarrollado en **Spring Boot con Java 17**, que utiliza **MySQL** como base de datos y cuenta con **Swagger** para la documentación de la API.
 
