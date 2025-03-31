@@ -54,9 +54,11 @@ INSERT INTO param(id, created_at, description, name, value) VALUES
 ## Documentación con Swagger
 Una vez que el microservicio esté en ejecución, puedes acceder a la documentación de la API en:
 
-📌 **Swagger UI:** [http://localhost:8084/swagger-ui.html](http://localhost:8084/swagger-ui.html)
+📌 **Swagger UI:** [http://18.188.183.16:8084/swagger-ui.html](http://18.188.183.16:8084/swagger-ui.html)
 
-📌 **API Docs (JSON):** [http://localhost:8084/api-docs](http://localhost:8084/api-docs)
+📌 **API Docs (JSON):** [http://18.188.183.16:8084/api-docs](http://18.188.183.16:8084/api-docs)
+
+📌 **Archivo Postman:**  [Archivo postman](https://grey-spaceship-424235.postman.co/workspace/Team-Workspace~68edb600-ee5d-4c38-8b36-a536e03fe47c/collection/7360325-65ea6339-859c-4de8-a716-6d6fc1fbd348?action=share&creator=7360325&active-environment=7360325-554d1cfe-4b8d-4391-a4de-9a3a3e1f19df)
 
 ## Generación del Token de Acceso
 Para obtener un token de acceso, usa las siguientes credenciales:
