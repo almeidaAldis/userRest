@@ -68,7 +68,7 @@ Usuario: admin
 Contraseña: admin@123
 ```
 
-Puedes autenticarte mediante una petición `POST` a `/auth/login` con el siguiente cuerpo JSON:
+Puedes autenticarte mediante una petición `POST` a `/auth` con el siguiente cuerpo JSON:
 
 ```json
 {
