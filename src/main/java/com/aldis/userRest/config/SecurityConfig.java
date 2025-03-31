@@ -16,12 +16,11 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-				.cors(cors -> cors.disable())
-				.csrf(AbstractHttpConfigurer::disable)
+				.cors(cors -> cors.disable()) // Ajustar si es necesario
+				.csrf(AbstractHttpConfigurer::disable) // Deshabilita CSRF
 				.authorizeHttpRequests(auth -> auth
-						.anyRequest().permitAll()
-				).formLogin(Customizer.withDefaults())
-				.httpBasic(Customizer.withDefaults());;
+						.anyRequest().permitAll() // Permitir TODO sin autenticación
+				);
 
 		return http.build();
 	}

@@ -9,8 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.naming.AuthenticationException;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -32,20 +32,20 @@ public class UserService {
     }
 
 
-    public ResponseEntity<Map<String,String>> verifyToken(String token) {
+    public ResponseEntity<Map<String,String>> verifyToken(String token) throws AuthenticationException {
         Token tokenS = tokenService.findByToken(token);
         if(tokenS.getDueDate().isBefore(LocalDateTime.now())) {
-            throw new AuthenticationServiceException("Unauthorized user");
+            throw new AuthenticationException("Unauthorized user");
         }
         Map<String,String> response = new HashMap<>();
         response.put("valid","true");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    public ResponseEntity<Map<String, String>> login(String userName, String password ) {
+    public ResponseEntity<Map<String, String>> login(String userName, String password ) throws AuthenticationException {
         User user = findByUserName(userName);
         if(!user.getPassword().equals(UtilHelper.encryptPassword(password))) {
-            throw new AuthenticationServiceException("Unauthorized user");
+            throw new AuthenticationException("Unauthorized user");
         }
         final LocalDateTime dueDate = UtilHelper.generateDueDateLoginToken(paramService);
         final String tokenString = UtilHelper.createLoginToken(user.getId(),dueDate,paramService);
