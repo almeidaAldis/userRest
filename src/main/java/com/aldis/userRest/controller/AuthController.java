@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("auth")
-@Tag(name = "auth", description = "API para gestión de productos")
+@Tag(name = "auth", description = "API para gestión de user")
 public class AuthController {
 
     private UserService userService;
@@ -21,9 +21,9 @@ public class AuthController {
 
     @PostMapping
     public ResponseEntity<Map<String, String>> login(
-            @RequestHeader("userName") final String userName,
-            @RequestHeader("password") final String password ) {
-        return userService.login(userName, password);
+            @RequestHeader("userName")  String userName,
+            @RequestHeader("password")  String password ) {
+        return userService.login(userName,password);
     }
 
     @PostMapping("/verify-access-token")

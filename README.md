@@ -44,7 +44,7 @@ Al iniciar el microservicio, las tablas se generarán automáticamente en la bas
 Ejecuta los siguientes **INSERT** en tu base de datos para el correcto funcionamiento del microservicio:
 
 ```sql
-INSERT INTO user(id, created_at, user_name, password) VALUES (1, NOW(), 'admin', 'dnaqr7AnyCW9mrq3iyNAcOcCdS9iW3UuVeVbSOYH41g');
+INSERT INTO user(id, created_at, user_name, password) VALUES (1, NOW(), 'admin', 'dnaqr7AnyCW9mrq3iyNAcOcCdS9iW3UuVeVbSOYH41g=');
 
 INSERT INTO param(id, created_at, description, name, value) VALUES
 (1, NOW(), 'password Enc', 'ENCRYPTION_KEY', '8Ea6vY7HyX29qAiQ/ACBtDu8n6cRul3rePtC8qtkvK4='),

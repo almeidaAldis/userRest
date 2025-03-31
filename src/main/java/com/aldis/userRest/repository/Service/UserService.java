@@ -27,12 +27,8 @@ public class UserService {
         this.tokenService = tokenService;
     }
 
-    public List<User> getAll() {
-        return repository.findAll().stream().toList();
-    }
-
     public User findByUserName(String userName) {
-        return repository.findByUserName(userName).orElseThrow(() -> new AuthenticationServiceException("Usuario no autorizado"));
+        return repository.findByUserName(userName).orElseThrow(() -> new AuthenticationServiceException("Unauthorized user"));
     }
 
 
