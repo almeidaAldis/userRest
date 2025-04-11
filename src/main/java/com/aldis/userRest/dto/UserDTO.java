@@ -16,15 +16,13 @@ public class UserDTO {
     @JsonProperty(value = "id", required = true)
     private Long id;
 
-    @JsonProperty(value = "name", required = true)
-    @NotEmpty(message = "Name is required")
-    private String name;
+    @JsonProperty(value = "userName", required = true)
+    @NotEmpty(message = "userName is required")
+    private String userName;
 
-    @JsonProperty(value = "lastName", required = true)
-    @NotEmpty(message = "lastName is required")
-    private String lastName;
+    @JsonProperty(value = "password", required = true)
+    @NotEmpty(message = "password is required")
+    private String password;
 
-    @JsonProperty(value = "age", required = true)
-    @NotNull(message = "age cannot be null")
-    private Integer age;
+
 }

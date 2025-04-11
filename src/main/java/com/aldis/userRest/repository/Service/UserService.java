@@ -43,7 +43,7 @@ public class UserService {
     }
 
     public ResponseEntity<Map<String, String>> login(String userName, String password ) throws AuthenticationException {
-        User user = findByUserName(userName);
+        User user = this.findByUserName(userName);
         if(!user.getPassword().equals(UtilHelper.encryptPassword(password))) {
             throw new AuthenticationException("Unauthorized user");
         }
